@@ -1,0 +1,71 @@
+body{
+    margin:0;
+    padding:0;
+}
+.main{
+    width:100%;
+    height:100vh;
+    scroll-behavior: smooth;
+    overflow-y:scroll;
+}
+
+ul{
+    position:fixed;
+    margin:0;
+    padding:0;
+    top:50%;
+    left:0;
+    z-index: 1;
+}
+li{
+    list-style:none;
+    padding-left:20px;
+    padding-right:20px;
+    background:rgba(149, 175, 192,0.6);
+    margin-top:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    height:30px;
+    line-height:30px;
+    border-top-right-radius:15px;
+    border-bottom-right-radius: 15px;
+    color:white;
+}
+li a{
+    text-decoration: none;
+    color:white
+}
+li:hover{
+    background:rgba(149, 175, 192,1);
+}
+.main div{
+    position: relative;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    font-size:40px;
+    color:white;
+    text-align:center;
+}
+.main div h3{
+    position: absolute;
+    top:25%;
+    left:50%;
+    transform:translate(-50%,0);
+}
+div#italy{
+    background-image: url("italy-1587287_1920.jpg");
+
+}
+div#fisherman{
+    background-image:url("fisherman-504098_1920.jpg");
+}
+div#road{
+    background-image: url("road-210913_1920.jpg");
+}
+div#sunset{
+    background-image: url("sunset-675847_1920.jpg");
+}
+div#trees{
+    background-image:url("trees-5746604_1920.jpg");
+}

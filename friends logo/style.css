@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "friends font";
+  src: url("Gabriel\ Weiss'\ Friends\ Font.TTF");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #333;
+}
+#text {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  border-bottom: 0.1vw solid white;
+  font-size: 2vw;
+  padding: 0.2vw;
+  color: white;
+  outline: none;
+}
+#main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main span {
+  --c: transparent;
+  color: white;
+  font-family: "friends font";
+  font-weight: bold;
+  font-size: 10vw;
+  text-shadow: 0.5vw 0.5vw 0 black;
+  margin-left: 5vw;
+  text-transform: uppercase;
+}
+#main span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-left: 2vw;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  background: var(--c);
+}

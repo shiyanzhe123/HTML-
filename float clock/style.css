@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Pix Font";
+    src: url("DottedSongtiSquareRegular.otf");
+}
+*{
+    margin:0;
+    padding:0;
+}
+canvas{
+    opacity:0.5;
+    transition:0.2s linear;
+    border-radius: 5px;
+    background:transparent;
+}
+canvas:hover{
+    opacity:1;
+    background:rgba(107,142,35,0.8);
+}

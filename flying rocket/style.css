@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background:#333;
+}
+#main{
+    color:#1e90ff;
+    position:absolute;
+    width:5vw;
+    height:5vw;
+    font-size:5vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#main::before{
+    content:"";
+    width:2vw;
+    height:2vw;
+    border-radius: 50%;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    box-shadow:-1vw 1vw 1vw #f1f2f6,-2vw 2vw 2vw #eccc68,-3vw 3vw 3vw #ff6348;
+    
+    z-index: -1;
+}
