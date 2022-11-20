@@ -1,0 +1,63 @@
+body{
+    margin:0;
+    padding:0;
+    background: black;
+}
+
+.neon{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:768px;
+    height:400px;
+    color:#1e272e;
+    font-size:40px;
+    font-family:"Courier New", 'Courier New', Courier, monospace;
+    line-height:1em;
+}
+.light1{
+    position: absolute;
+    top:120px;
+    left:264px;
+    /* color:white; */
+    /* text-shadow: 0 0 20px #1B9CFC; */
+}
+.light1:hover{
+    color:white;
+    text-shadow: 0 0 20px #1B9CFC;
+}
+
+.light2{
+    position: absolute;
+    top:240px;
+    left:312px;
+    /* color:white; */
+    /* text-shadow:0 0 20px #D6A2E8; */
+}
+.light2:hover{
+    color:white;
+    text-shadow:0 0 20px #D6A2E8;
+}
+.light3{
+    position:absolute;
+    top:80px;
+    left:72px;
+    /* color:white; */
+    /* text-shadow:0 0 20px #ffc048; */
+}
+.light4{
+    position: absolute;
+    width:24px;
+    word-break: break-all;
+    top:40px;
+    left:96px;
+    /* color:white; */
+    /* text-shadow:0 0 20px #0be881; */
+}
+
+.light3:hover , .light4:hover{
+    color:white;
+    text-shadow:0 0 20px #FD7272;
+    z-index:99;
+}

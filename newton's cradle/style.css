@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #333;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+span {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #1e90ff;
+  position: relative;
+  filter: blur(1px);
+  animation: light 3s linear infinite calc(1.5s + 0.03s * var(--s)),
+    light 3s linear infinite calc(0.12s - 0.03s * var(--s));
+}
+span::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 250px;
+  background: gray;
+  left: 50px;
+  top: -250px;
+}
+span::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  left: 41px;
+  top: -260px;
+}
+span.left,
+span.right {
+  transform-origin: 50px -250px;
+}
+span.left {
+  animation: left 3s linear infinite;
+}
+span.right {
+  animation: right 3s linear infinite;
+}
+@keyframes light {
+  50% {
+    background: yellow;
+    box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 40px yellow;
+  }
+  51%,
+  49% {
+    background: #1e90ff;
+    box-shadow: none;
+  }
+}
+@keyframes left {
+  55%,
+  95% {
+    transform: rotate(20deg);
+  }
+  60%,
+  90% {
+    transform: rotate(35deg);
+  }
+  65%,
+  85% {
+    transform: rotate(45deg);
+  }
+  70%,
+  80% {
+    transform: rotate(55deg);
+  }
+  75% {
+    transform: rotate(60deg);
+    background: yellow;
+    box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 40px yellow;
+  }
+  0%,
+  50%,
+  100% {
+    transform: rotate(0);
+    background: #1e90ff;
+    box-shadow: none;
+  }
+}
+@keyframes right {
+  5%,
+  45% {
+    transform: rotate(-20deg);
+  }
+  10%,
+  40% {
+    transform: rotate(-35deg);
+  }
+  15%,
+  35% {
+    transform: rotate(-45deg);
+  }
+  20%,
+  30% {
+    transform: rotate(-55deg);
+  }
+  25% {
+    transform: rotate(-60deg);
+    background: yellow;
+    box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 40px yellow;
+  }
+  0%,
+  50%,
+  100% {
+    transform: rotate(0);
+    background-color: #1e90ff;
+    box-shadow: none;
+  }
+}

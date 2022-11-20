@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ececec;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main {
+    appearance: none;
+    display: flex;
+    position: relative;
+    width: 200px;
+    height: 85px;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12), inset -10px -10px 15px rgba(255, 255, 255, 0.5), inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+    border: 10px solid #ececec;
+    border-radius: 85px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main::before,
+.main::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transition: 0.2s linear;
+}
+
+.main::before {
+    width: 50px;
+    height: 50px;
+    background: white;
+    left: 10px;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.5), 5px 5px 15px rgba(70, 70, 70, 0.12);
+}
+
+.main::after {
+    width: 10px;
+    height: 10px;
+    background: #c0392b;
+    left: 30px;
+}
+
+.main:checked::before {
+    left: 120px;
+}
+
+.main:checked::after {
+    left: 140px;
+    background: #2ed573;
+    box-shadow: 0 0 4px #2ed573, 0 0 8px #2ed573, 0 0 16px #2ed573;
+}

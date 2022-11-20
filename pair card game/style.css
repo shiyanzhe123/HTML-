@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background:#333;
+}
+#canvas{
+    width:800px;
+    height:800px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border:1px solid white;
+    box-shadow:0 0 1vw white,inset 0 0 1vw white;
+}

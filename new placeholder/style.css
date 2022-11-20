@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #333;
+}
+
+.main {
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid gray;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    width: 100%;
+    list-style-type: none;
+}
+
+li {
+    width: 100%;
+    margin-bottom: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+li span.photo {
+    background: url("cat.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 300px;
+    height: 300px;
+}
+
+li input {
+    width: 80%;
+    display: block;
+    box-sizing: border-box;
+    height: 30px;
+    left: 0;
+    top: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 25px;
+}
+
+li label {
+    width: 80%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    color: gray;
+    padding-left: 15px;
+    pointer-events: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    transition: 0.5s linear;
+}
+
+li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    transition: 0.2s linear;
+}
+
+li a:hover {
+    /* color:#1e99ff; */
+    border-color: #1e99ff;
+    text-shadow: 0 0 3px #1e99ff, 0 0 6px #1e99ff, 0 0 12px #1e99ff;
+}
+
+li input:focus~label,
+li input:valid~label {
+    border-color: #1e99ff;
+    color: #1e99ff;
+    padding-bottom: 30px;
+    font-size: 10px;
+}

@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    flex-direction: column;
+}
+
+.button {
+    width: 200px;
+    height: 80px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.button p {
+    font-size: 40px;
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    transition: 1.1s linear;
+}
+
+.button .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.button .back span {
+    background: white;
+    display: block;
+    float: left;
+}
+
+.button:hover div span {
+    background: var(--c);
+}
+
+.button:hover p {
+    color: white;
+}
