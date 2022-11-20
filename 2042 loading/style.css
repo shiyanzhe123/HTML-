@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #333;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #2ed573;
+  animation: roll 5s linear infinite;
+}
+.main span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #2ed573;
+  box-shadow: 0 0 2px #2ed573, 0 0 4px #2ed573, 0 0 8px #2ed573;
+  left: 0;
+  top: 0;
+  animation: bf2042 4s ease infinite;
+}
+.main span:nth-child(1) {
+  --l: 100%;
+  --x: -51%;
+  --y: -51%;
+}
+.main span:nth-child(2) {
+  --t: 100%;
+  --x: 51%;
+  --y: -51%;
+}
+.main span:nth-child(3) {
+  --l: -100%;
+  --x: -51%;
+  --y: 51%;
+}
+.main span:nth-child(4) {
+  --t: -100%;
+  --x: 51%;
+  --y: 51%;
+}
+@keyframes bf2042 {
+  0%,
+  50%,
+  100% {
+    left: 0;
+    top: 0;
+  }
+
+  20%,
+  40% {
+    left: var(--x);
+    top: var(--y);
+  }
+  60%,
+  80% {
+    left: var(--l);
+    top: var(--t);
+  }
+}
+
+@keyframes roll {
+  75% {
+    transform: rotate(360deg);
+  }
+}

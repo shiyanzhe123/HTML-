@@ -1,0 +1,56 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background:#333;
+}
+.main{
+    box-sizing: border-box;
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:400px;
+    height:400px;
+    transform:translate(-50%,-50%) rotate(45deg);
+    border:10px solid white;
+    border-radius: 50px;
+    animation: roll2 4s linear infinite;
+}
+@keyframes roll2{
+    100%{
+        transform:translate(-50%,-50%) rotate(405deg);
+    }
+}
+.main span{
+    box-sizing: border-box;
+    position:absolute;
+    width:calc(100% + 10px);
+    height:calc(100% + 10px);
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(calc(90deg * var(--s)));
+    /* border:1px solid white; */
+}
+.main span::after{
+    box-sizing: border-box;
+    content:"";
+    width:180px;
+    height:180px;
+    border-radius: 50%;
+    background:var(--c);
+    position:absolute;
+    border:0px solid #333;
+        left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    animation:move 4s linear infinite;
+    box-shadow:0 0 5px var(--c), 0 0 10px var(--c),0 0 20px var(--c);
+}
+@keyframes move {
+    45%,55%{
+    left:0;
+    border:10px solid #333;
+    box-shadow:none;
+    }
+}
