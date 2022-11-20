@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="slide">
+        <div :style="images">
+            <label v-for="i in pics.length" :style="{left:30 * i + 'px'}" @click="change(i)" :class="{back:i == checked}"></label>
+            <div :style = "moveit"></div>
+            <div v-for="pic in pics" class="pic">
+                <img :src="pic">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var main = new Vue({
+        el: "#slide",
+        data: {
+            pics: [
+                "chess-3960184_1920.jpg",
+                "clouds-5784152_1920.jpg",
+                "clouds-over-the-mountains-5031782_1920.jpg",
+                "hamburg-1658471_1920.jpg",
+                "lake-5756911_1920.jpg",
+                "river-5765785_1920.jpg",
+            ],
+            moveit:{
+                'margin-left':"0",
+                'width':'0px',
+                'transition':'0.5s linear',
+            },
+            images:{
+                'width':"",
+                'height':'480px',
+                'display':'flex',
+                
+            },
+            checked : 1,
+        },
+        methods: {
+            change:function(val){
+                this.moveit['margin-left'] = (1-val) * 640 + 'px'
+                this.checked = val
+            }
+        }
+    })
+    main.images['width'] = 640 * main.pics.length + 'px'
+</script>

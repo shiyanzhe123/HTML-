@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "digital";
+  src: url("Digital\ Dismay.otf");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #333;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock {
+  font-family: "digital";
+  font-size: 5vw;
+  position: absolute;
+  left: 1vw;
+  top: 1vw;
+  color: #ced6e0;
+  text-shadow: 0 0 5px #ced6e0, 0 0 10px #ced6e0;
+}
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.back span {
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0 0 1px white, 0 0 2px white, 0 0 4px white;
+}
+.img {
+  width: 20vw;
+  height: 20vw;
+  background: url("spacewalks-153581_1280.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  animation: move 10s linear infinite;
+  left: 40%;
+  top: 40%;
+  transform: rotate(25deg);
+}
+@keyframes move {
+  25% {
+    left: 70%;
+    top: 40%;
+    transform: rotate(0);
+  }
+  50% {
+    left: 70%;
+    top: 70%;
+    transform: rotate(-25deg);
+  }
+  75% {
+    left: 40%;
+    top: 70%;
+    transform: rotate(-50deg);
+  }
+}

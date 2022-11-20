@@ -1,0 +1,72 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background:#333;
+}
+.main,.main a,.main a::after,.main::before{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    width:600px;
+    height:400px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+.main a{
+    width:200px;
+    height:80px;
+    font-size:30px;
+    /* background:transparent; */
+    border:5px solid #1e90ff;
+    border-radius: 25px;
+    outline: none;
+    position:absolute;
+    overflow:hidden;
+    box-sizing: border-box;
+    text-decoration: none;
+    color:transparent;
+    transition:0.5s linear 3s;
+}
+.main a:hover{
+    border:5px solid #1e90ff;
+}
+.main a::before{
+    position:absolute;
+    content:"";
+    left:0;
+    top:0;
+    width:0;
+    height:100%;
+    overflow:hidden;
+    background:#1e90ff;
+    transition: 3s linear;
+    z-index: -1;   
+}
+.main a::after{
+    position:absolute;
+    width:100%;
+    height:100%;
+    content:"SUBMIT";
+    color:white;
+    z-index: -1;
+}
+.main a:hover::after{
+    color:#1e90ff;
+    
+}
+#sub:target a::before{
+    width:100%;
+}
+#sub:target a{
+    border:5px solid #1e90ff;
+    color:white;
+}
+#sub:target a::after{
+    content:"";
+}
