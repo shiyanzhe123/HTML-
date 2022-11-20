@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #333;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+}
+.main div {
+  width: 25px;
+  height: 100px;
+  border: 3px solid var(--d);
+  position: absolute;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 5px var(--d), 0 0 10px var(--d), inset 0 0 5px var(--d),
+    inset 0 0 10px var(--d);
+  animation: light 5s linear infinite;
+}
+.main p {
+  position: absolute;
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0 0 2px #3742fa, 0 0 4px #3742fa, 0 0 8px #3742fa;
+  animation: load 6s linear infinite;
+}
+.main i {
+  color: white;
+  font-size: 80px;
+  line-height: 100px;
+  transform: translate(-25%, 0);
+  -webkit-text-stroke: var(--d) 1px;
+  animation: move 4s linear infinite;
+}
+.blue {
+  left: 0;
+}
+.blue i {
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+.yellow {
+  right: 0;
+}
+.yellow i {
+  clip-path: polygon(100% 0, 50% 0, 50% 100%, 100% 100%);
+}
+@keyframes light {
+  50% {
+    box-shadow: 0 0 10px var(--d), 0 0 20px var(--d), inset 0 0 10px var(--d),
+      inset 0 0 20px var(--d);
+  }
+}
+@keyframes move {
+  50% {
+    transform: translate(-25%, -5%);
+  }
+}
+@keyframes load {
+  50% {
+    text-shadow: 0 0 2px #ffa502, 0 0 4px #ffa502, 0 0 8px #ffa502;
+  }
+}
