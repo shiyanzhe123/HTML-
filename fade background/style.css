@@ -1,0 +1,98 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background:333;
+}
+label{
+    width:20px;
+    height:20px;
+    box-sizing: border-box;
+    border:2px solid white;
+    position:fixed;
+    z-index:99;
+    left:calc(30px * var(--l) + 20px);
+    bottom:30px;
+    transition: 1s linear;
+}
+.back{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100vh;
+}
+.back input{
+    display:none;
+}
+.back div{
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center center;
+    opacity: 0;
+    transition:1s linear;
+}
+.back p{
+    position:fixed;
+    color:white;
+    width:20vw;
+    height:80vw;
+    z-index: 9;
+    top:10vw;
+    left:30vw;
+    opacity: 0;
+    font-size:1.5vw;
+    text-shadow:5px 5px 5px black;
+    /* transition: 1s linear; */
+    animation:fadein 2s;
+}
+.img1{
+    background:url("italy-6735340_1920.jpg");
+}
+.img2{
+    background:url("natural-6693234_1920.jpg");
+}
+.img3{
+    background:url("river-6696262_1920.jpg");
+}
+.img4{
+    background:url("road-6745746_1920.jpg");
+}
+.img5{
+    background:url("sunset-6387462_1920.jpg");
+}
+input:checked ~ label{
+    background:white;
+    box-shadow:0 0 5px hsl(calc(var(--l) / 5 * 360),80%,50%),0 0 10px hsl(calc(var(--l) / 5 * 360),80%,50%),0 0 20px hsl(calc(var(--l) / 5 * 360),80%,50%),
+    inset 0 0 5px hsl(calc(var(--l) / 5 * 360),80%,50%),inset 0 0 10px hsl(calc(var(--l) / 5 * 360),80%,50%);
+}
+input:checked ~ div{
+    opacity: 1;
+}
+input:checked ~ p{
+    animation:fadeout 2s;
+    opacity: 1;
+    left:10vw;
+}
+@keyframes fadeout{
+    0%{
+        left:10vw;
+        opacity: 1;
+    }
+    100%{
+        left:-20vw;
+        opacity: 0;
+    }
+}
+@keyframes fadein{
+    0%{
+        left:30vw;
+        opacity: 0;
+    }
+    100%{
+        left:10vw;
+        opacity: 1;
+    }
+}

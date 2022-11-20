@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    padding:0;
+}
+.light{
+    --c:blue;
+    position:fixed;
+    width:10px;
+    height:15px;
+    top:20px;
+    left:10px;
+    background:var(--c);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    box-shadow:0 0 5px var(--c),0 0 10px var(--c),0 0 20px var(--c);
+    transform-origin: 5px -10px;
+    transform:rotate(-30deg);
+    animation: roll 4s linear infinite;
+    pointer-events: none;
+}
+.light::before{
+    content:"";
+    position:absolute;
+    background:black;
+    width:10px;
+    height:10px;
+    left:0;
+    top:-10px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+@keyframes roll{
+    50%{
+        transform:rotate(30deg);
+    }
+}
