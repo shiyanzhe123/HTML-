@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; /* 列表样式改为无 */
+  transition: 0.3s linear; /* 切换动态效果 */
+}
+body {
+  background: url("fog-3776796_1920.jpg"); /* 设置背景图片 */
+  background-size: auto;  /* 设置图片尺寸 */
+  background-position: center 0; /* 设置图片位置为水平居中，垂直不变 */
+}
+#red, /* 设置input 不显示 */
+#blue {
+  display: none; 
+}
+.red, /* 设置关联input的label样式 */
+.blue {
+  width: 60px;
+  height: 15px;
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+.red {
+  border: 2px solid #ff4757;
+}
+.blue {
+  border: 2px solid #1e90ff;
+}
+/* 设置label的选中效果 */
+#red:checked ~ label.red { 
+  background: #ff4757;
+}
+#blue:checked ~ label.blue {
+  background: #1e90ff;
+}
+/* 默认的登录界面 */
+.main {
+  --c: white;  /*利用变量定义主体颜色*/
+  --b: rgba(0, 0, 0, 0.6); /* 定义变量对应背景颜色 */
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--c);
+  background: var(--b);
+  backdrop-filter: blur(3px);
+}
+.main li { /* 设置列表的默认效果 */
+  text-align: center;
+  margin-top: 20px;
+}
+li input { /* 改变默认的input样式 */
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+  background: transparent;
+  padding: 5px;
+  color: white;
+}
+li a { /* 改变默认的超级链接样式 */ 
+  margin: 0 20px;
+  color: var(--c);
+  padding: 5px;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  width: 100px;
+}
+li a:hover { /* 鼠标移动到超级链接的效果 */
+  background: var(--c);
+  color: black;
+}
+/* 红色主题对应的设置 */
+#red:checked ~ .main { /* 通过改变变量变更颜色效果 */
+  --c: #ff4757;
+  --b: rgba(47, 53, 66, 0.6);
+  border-radius: 15px;
+}
+#red:checked ~ .main input { /* 调整边框设置 */
+  border: 1px solid var(--c);
+  border-radius: 5px;
+}
+#red:checked ~ .main input::placeholder { /* 仅对webkit核心生效，设置input的提示样式 */
+  color: rgba(164, 176, 190, 1);
+}
+#red:checked ~ .main a { /* 同样变更超级链接的边框样式 */
+  border: 1px solid var(--c);
+  border-radius: 5px;
+}
+/* 蓝色主题设置 */
+#blue:checked ~ .main {
+  --c: rgba(30, 144, 255, 1);
+  --b: rgba(19, 15, 64, 0.6);
+  border-radius: 0px;
+}
+#blue:checked ~ .main input {
+  border: none;
+  border-bottom: 1px solid var(--c);
+  border-radius: 0px;
+}
+#blue:checked ~ .main input::placeholder {
+  color: rgba(164, 176, 190, 1);
+}
+#blue:checked ~ .main a {
+  border: none;
+  border-bottom: 1px solid var(--c);
+  border-radius: 0px;
+}
