@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:#333;
+}
+.list{
+    width:600px;
+    height:600px;
+    border:1px solid white;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.list::after{
+    content: "";
+    position:absolute;
+    width:0px;
+    height:0px;
+    border-width:10px;
+    border-style:solid;
+    border-color:transparent transparent transparent red;
+    right:0;
+}
+.list::before{
+    content:attr(data);
+    position:absolute;
+    color:#1e90ff;
+    font-size:80px;
+}
+.list span{
+    color:white;
+    position:absolute;
+    width:calc(100%  + 120px);
+    height:20px;
+    text-align: right;
+    transition:0.01s linear;
+}

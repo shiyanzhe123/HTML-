@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #333;
+}
+
+.main {
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border: 1px solid white;
+    box-shadow: 10px 10px 20px black;
+    transition: 1s linear;
+    border-radius: 10px;
+}
+
+.main::before {
+    background: url("background.jpg");
+    filter: blur(5px);
+}
+
+.main::after {
+    background: url("tiger.jpg");
+    transition: 1s linear;
+}
+
+.main::before,
+.main::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.main:hover {
+    box-shadow: 1px 1px 1px black;
+}
+
+.main:hover::after {
+    width: 50%;
+    height: 50%;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background: url("cat.jpg");
+    background-size: cover;
+}
+
+.info {
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.info p {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.info p.icon {
+    font-size: 30px;
+    color: #1e90ff;
+}
+
+.info p.icon a {
+    margin: 0px 20px;
+    color: #1e90ff;
+}
+
+.info p.icon a:hover {
+    color: white;
+    text-shadow: 0 0 4px #1e90ff, 0 0 8px #1e90ff, 0 0 12px #1e90ff;
+}

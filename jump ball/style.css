@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #333;
+}
+.main {
+  width: 600px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.main span.ball { /*绘制球体*/
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  background: #1e90ff;
+  left: calc(100px * var(--b)); /*利用CSS变量快速排列*/
+  animation: jump 2s linear infinite calc(0.3s * var(--b)); /*利用css变量延迟动画效果*/
+}
+.main span.shadow {
+  width: 50px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  left: calc(100px * var(--b));
+  background: black;
+  bottom: -12.5px;
+  z-index: -1;
+  animation: shadow 2s linear infinite calc(0.3s * var(--b));
+}
+@keyframes shadow {
+  0%,
+  100% { /* 球体位于最高点时阴影透明度最高，尺寸最大*/
+    transform: scale(2);
+    opacity: 0.1;
+    filter: blur(5px);
+  }
+  40%,
+  60% { /* 球体接触最低点时阴影透明度最低，尺寸最小*/
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(2px);
+  }
+}
+@keyframes jump {
+  0%,
+  100% { /* 最高点位置*/
+    bottom: 150px;
+  }
+  40%,
+  60% { /*最低点位置，尺寸保持不变*/
+    bottom: 0;
+    height: 50px;
+  }
+  50% {
+    height: 25px; /* 压缩至极限的尺寸 同时改变色轮角度*/
+    filter: hue-rotate(90deg);
+  }
+}

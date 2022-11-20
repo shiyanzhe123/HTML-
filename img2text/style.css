@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background: #333;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#canvas {
+  border: 1px solid white;
+}
+#range {
+  width: 80%;
+  margin-top: 20px;
+}

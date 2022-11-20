@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: black;
+  overflow: hidden;
+}
+#canvas {
+  background: black;
+  filter: blur(20px) contrast(40);
+}

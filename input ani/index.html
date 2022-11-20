@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+            <input type="text" placeholder="PRESS ENTER TO SEARCH" id="search">
+            <span class="bar"></span>
+    </div>
+</body>
+</html>
+<script>
+    var search=document.getElementById("search")
+    var bar = document.getElementsByClassName("bar")[0]
+    search.onfocus=function(){ // 输入框获得焦点时将放大镜手柄隐藏
+        bar.style.height="0"
+    }
+    search.onblur=function(){ //当输入框失去焦点时显示放大镜手柄，同时清除输入框内容
+        bar.style.height="60px"
+        search.value=""
+        
+    }
+</script>

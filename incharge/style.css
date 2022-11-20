@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #333;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    border: 5px solid white;
+    border-radius: 15px;
+}
+
+.main i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #333;
+    color: white;
+    font-size: 200px;
+    z-index: 9;
+    animation: zoom 2s linear infinite;
+}
+
+.main::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 60px;
+    background: white;
+    right: -40px;
+    border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.main::after {
+    position: absolute;
+    content: "";
+    top: 5px;
+    left: 5px;
+    width: 0px;
+    height: 140px;
+    border-radius: 5px;
+    background: var(--c);
+    animation: incharge 15s linear infinite;
+    box-shadow: 0 0 10px var(--c), 0 0 20px var(--c);
+    z-index: -1;
+}
+
+@keyframes incharge {
+    0% {
+        --c: #ff4757;
+        width: 0;
+    }
+    10% {
+        --c: #ff4757;
+    }
+    11%,
+    20% {
+        --c: #ffa502;
+    }
+    21% {
+        --c: #2ed573;
+    }
+    90%,
+    100% {
+        --c: #2ed573;
+        width: 390px;
+    }
+}
+
+@keyframes zoom {
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}

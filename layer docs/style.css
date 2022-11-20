@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background: #333;
+}
+#layer {
+  display: none;
+}
+label.files {
+  position: absolute;
+  left: 5vw;
+  top: 5vw;
+  width: 20vw;
+  height: 25vw;
+  border: 1px solid white;
+  padding: 0.5vw;
+  transform-origin: 0 0;
+  transform: translateY(2vw) scale(0.2) rotate(15deg) skew(-25deg);
+}
+label.files:hover {
+  cursor: pointer;
+}
+#layer:checked ~ .main .file {
+  left: 5vw;
+  top: 5vw;
+  transform-origin: 0 0;
+  transform: translateY(calc(0.5vw * var(--f))) scale(0.2) rotate(15deg)
+    skew(-25deg);
+  border-radius: 0;
+  opacity: calc(1 - 0.3 * var(--f));
+  z-index: calc(-1 * var(--f));
+}
+.main {
+  width: 100%;
+  height: 100vh;
+}
+.main .file {
+  position: absolute;
+  width: 20vw;
+  height: 25vw;
+  left: calc(25vw * var(--f) - 10vw);
+  top: 10vw;
+  border: 1px solid black;
+  background: white;
+  overflow: hidden;
+  border-radius: 1vw;
+  padding: 0.5vw;
+  box-shadow: 1vw 1vw 2vw black;
+  transition: 1s linear calc(0.2s * var(--f));
+}
+.file h1 {
+  text-align: center;
+  font-size: 2vw;
+}
+.file p {
+  font-size: 1.5vw;
+}
